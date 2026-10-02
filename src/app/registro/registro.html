@@ -1,0 +1,37 @@
+<div class="contenedor">
+  <h2>Registro de usuario</h2>
+
+  <form #formRegistro="ngForm" (ngSubmit)="registrar()">
+    <label for="nombre">Nombre completo</label>
+    <input id="nombre" type="text" name="nombre" [(ngModel)]="usuario.nombre">
+
+    <label for="correo">Correo electrónico</label>
+    <input id="correo" type="email" name="correo" [(ngModel)]="usuario.correo">
+
+    <label for="telefono">Teléfono</label>
+    <input id="telefono" type="tel" name="telefono" [(ngModel)]="usuario.telefono">
+
+    <label for="edad">Edad</label>
+    <input id="edad" type="number" name="edad" [(ngModel)]="usuario.edad">
+
+    <label for="password">Contraseña</label>
+    <input id="password" type="password" name="password" [(ngModel)]="usuario.password">
+
+    <label for="confirmar">Confirmar contraseña</label>
+    <input id="confirmar" type="password" name="confirmar" [(ngModel)]="usuario.confirmar">
+
+    <button type="submit">Registrar</button>
+  </form>
+
+  @if (datosEnviados) {
+    <div class="resultado">
+      <h3>Información capturada</h3>
+      <p><strong>Nombre:</strong> {{ datosEnviados.nombre }}</p>
+      <p><strong>Correo:</strong> {{ datosEnviados.correo }}</p>
+      <p><strong>Teléfono:</strong> {{ datosEnviados.telefono }}</p>
+      <p><strong>Edad:</strong> {{ datosEnviados.edad }}</p>
+      <p><strong>Contraseña:</strong> {{ datosEnviados.password }}</p>
+      <p><strong>Confirmación:</strong> {{ datosEnviados.confirmar }}</p>
+    </div>
+  }
+</div>
